@@ -21,9 +21,22 @@ body {
         justify-content: center;
         align-items: center;
         background: linear-gradient(45deg, $vivid-red, $gold, $dodger-blue);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         background-clip: text;
         color: transparent;
     }
+}
+
+.waving-hand {
+    display: inline-block;
+    color: $vivid-red;
+    display: block;
+    animation: wave 1.2s infinite ease-in-out;
+}
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-15deg); }
+    100% { transform: rotate(0deg); }
 }
