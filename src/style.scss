@@ -14,6 +14,7 @@ body {
     align-items: center;
     font-size: 2.5rem;
     font-weight: 800;
+    padding: 0 50px;
 
     .section {
         height: 100vh;
@@ -23,14 +24,23 @@ body {
         background: linear-gradient(45deg, $vivid-red, $gold, $dodger-blue);
         background-clip: text;
         color: transparent;
+        flex-flow: column;
+
+        /* Portrait and Landscape */
+        @media only screen 
+            and (min-device-width: 768px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                flex-flow: row;
+        }
+
     }
 }
 
 .waving-hand {
     display: inline-block;
     color: $vivid-red;
-    display: block;
     animation: wave 1.2s infinite ease-in-out;
+    padding: 0 20px;
 }
 
 @keyframes wave {
