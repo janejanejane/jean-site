@@ -1,9 +1,15 @@
 $vivid-red: #ff0047;
 $gold: #ffa600;
 $dodger-blue: #1e90ff;
+$dark-charcoal: #121212;
 
 body {
     font-family: 'Courier New', Courier, monospace;
+
+    /* Dark mode background color */
+    @media (prefers-color-scheme: dark) {
+        background-color: $dark-charcoal;
+    }
 }
 
 .main {
