@@ -46,7 +46,12 @@ body {
     display: inline-block;
     color: $vivid-red;
     animation: wave 1.2s infinite ease-in-out;
-    padding: 0 20px;
+    padding-right: 20px;
+
+    img {
+        width: 2.5rem;
+        height: auto;
+    }
 }
 
 @keyframes wave {
