@@ -12,9 +12,29 @@ body {
     }
 }
 
-.main {
-    flex: 1 1;
+button {
+    position: relative;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
+    img {
+        transition: transform 0.2s ease-in-out;
+    }
+}
+
+img {
+    max-width: 100%;
+    width: 2.5rem;
+    height: auto;
+}
+
+.content {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -25,6 +45,7 @@ body {
     .section {
         height: 100vh;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         background: linear-gradient(45deg, $vivid-red, $gold, $dodger-blue);
@@ -33,12 +54,9 @@ body {
         flex-flow: column;
 
         /* Portrait and Landscape */
-        @media only screen 
-            and (min-device-width: 768px) 
-            and (-webkit-min-device-pixel-ratio: 1) {
-                flex-flow: row;
+        @media (min-width: 600px)  { // this is the breakpoint that fits the 2 divs nicely
+            flex-flow: row;
         }
-
     }
 }
 
@@ -47,11 +65,6 @@ body {
     color: $vivid-red;
     animation: wave 1.2s infinite ease-in-out;
     padding-right: 20px;
-
-    img {
-        width: 2.5rem;
-        height: auto;
-    }
 }
 
 @keyframes wave {
