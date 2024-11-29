@@ -5,10 +5,22 @@ $dark-charcoal: #121212;
 
 body {
     font-family: 'Courier New', Courier, monospace;
+    color: $dark-charcoal;
+    background-color: white;
 
     /* Dark mode background color */
     @media (prefers-color-scheme: dark) {
+        color: white;
         background-color: $dark-charcoal;
+    }
+}
+
+a {
+    color: $dark-charcoal;
+
+    /* Dark mode background color */
+    @media (prefers-color-scheme: dark) {
+        color: white;
     }
 }
 
@@ -20,10 +32,6 @@ button {
     background-color: transparent;
     border: none;
     padding: 0;
-
-    img {
-        transition: transform 0.2s ease-in-out;
-    }
 }
 
 img {
@@ -60,11 +68,45 @@ img {
     }
 }
 
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
 .waving-hand {
     display: inline-block;
     color: $vivid-red;
     animation: wave 1.2s infinite ease-in-out;
     padding-right: 20px;
+}
+
+#menu {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    border-radius: 5px;
+    bottom: 75px;
+    left: 20px;
+
+    /* Dark mode background color */
+    @media (prefers-color-scheme: dark) {
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            margin: 15px;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 @keyframes wave {
