@@ -31,3 +31,16 @@ const animate = function() {
 
 
 requestAnimationFrame(animate);
+
+const zenQuotesApi ="/quotes";
+
+async function getZenQuotes(url) {
+  const response = await fetch(url);
+
+
+  var data = await response.json();
+  console.log(data);
+}
+
+getZenQuotes(zenQuotesApi);
+
