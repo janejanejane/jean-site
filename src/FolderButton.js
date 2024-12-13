@@ -12,7 +12,6 @@ export function FolderButton() {
 
     function handleClick() {
         startTransition(() => {
-            console.log('clicked!');
             if(btnAlt.includes('closed')) {
                 setBtnImage(openFolder);
                 setBtnAlt('opened folder');
@@ -25,9 +24,8 @@ export function FolderButton() {
 
     return (
         <>
-            {console.log(btnAlt.includes('opened'))}
             {btnAlt.includes('opened') && <FloatingMenu />}
-            <button type="button" aria-label="Choose what to do" id="btn-whatodo" onClick={handleClick} className="hidden">
+            <button type="button" aria-label="Choose what to do" id="btn-whatodo" onClick={handleClick}>
                 <img src={btnImage} alt={btnAlt} />
             </button>
         </>
