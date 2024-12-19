@@ -1,16 +1,27 @@
-import { useFetch } from "../hooks/useFetch";
+import { useState } from "react";
+import { useFetch } from "./hooks/useFetch";
 
 
-export default function FloatingMenu() {
+const FloatingMenu = ({ onLinkClick, onVisibilityChange }) => {
     const {data, loading, error} = useFetch('/quotes');
+    const [isVisible, setIsVisible] = useState(true);
 
-    console.log('inside FloatingMenu', data, loading, error);
+    function handleClick(e, section, data) {
+        e.preventDefault();
+
+        setIsVisible(false);
+        onVisibilityChange(isVisible);
+
+        onLinkClick(section, data); // defined in parent component App.js
+    };
 
     return (
         <div id="menu">
             <ul>
-                <li><a href="#">Want a Zen Quote?</a></li>
+                {isVisible && <li><a href="#quote" onClick={(e) => handleClick(e, 'quote', data)}>Want a Zen Quote?</a></li>}
             </ul>
         </div>
     );
-}
+};
+
+export default FloatingMenu;

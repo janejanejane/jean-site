@@ -14,7 +14,6 @@ export const useFetch = (url, options = {}) => {
             setError(Error('No data found.'));
         }
 
-        console.log('quotes are:', quotes); 
         const updatedQuotes = [...quotes];
         setData(updatedQuotes.shift()); // get the first quote in the array
 
@@ -22,6 +21,8 @@ export const useFetch = (url, options = {}) => {
             await localforage.setItem(key, updatedQuotes);
         } catch(err) {
             setError(err);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -30,7 +31,6 @@ export const useFetch = (url, options = {}) => {
 
         const fetchData = async () => {
             setLoading(true);
-            console.log('inside fetchData');
 
             try {
                 const response = await axios(url, options); // get quotes from api
@@ -45,7 +45,6 @@ export const useFetch = (url, options = {}) => {
         };
 
         const getRandomQuote = async () => {
-            console.log('inside getRandomQuote');
             try {
                 const keys = await localforage.keys(); // checks existing databases
 
@@ -55,9 +54,11 @@ export const useFetch = (url, options = {}) => {
 
                 const value = await localforage.getItem(key); // get the quotes
 
-                if(value) {
+                if(value.length) {
                     console.log('value from indexeddb:', value);
                     setQuote(value); // call custom function that sets the data
+                } else {
+                    fetchData();
                 }
             } catch(err) {
                 setError(err);
