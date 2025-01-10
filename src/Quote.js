@@ -3,7 +3,7 @@ export const Quote = ({ apiData }) => {
 
     return (
         <div>
-            <blockquote className="section">
+            <blockquote className="section quote">
                 <p>{apiData.q}</p>
                 <footer>
                     — <cite>{apiData.a}</cite>

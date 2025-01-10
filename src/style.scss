@@ -40,6 +40,12 @@ img {
     height: auto;
 }
 
+small {
+    font-size: 1rem;
+    font-weight: normal;
+    display: inline-block;
+}
+
 .content {
     display: flex;
     flex-wrap: wrap;
@@ -48,7 +54,9 @@ img {
     align-items: center;
     font-size: 2.5rem;
     font-weight: 800;
-    padding: 0 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 25px;
 
     .section {
         height: 100vh;
@@ -56,14 +64,24 @@ img {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(45deg, $vivid-red, $gold, $dodger-blue);
-        background-clip: text;
-        color: transparent;
         flex-flow: column;
 
-        /* Portrait and Landscape */
-        @media (min-width: 600px)  { // this is the breakpoint that fits the 2 divs nicely
-            flex-flow: row;
+        &.intro {
+            background: linear-gradient(45deg, $vivid-red, $gold, $dodger-blue);
+            background-clip: text;
+            color: transparent;
+
+            /* Portrait and Landscape */
+            @media (min-width: 600px)  { // this is the breakpoint that fits the 2 divs nicely
+                flex-flow: row;
+            }
+        }
+
+        &.quote {
+            /* Portrait and Landscape */
+            @media (min-width: 600px)  {
+                padding: 0 250px;
+            }
         }
     }
 }
@@ -89,10 +107,12 @@ img {
     border-radius: 5px;
     bottom: 75px;
     left: 20px;
+    background-color: white;
 
     /* Dark mode background color */
     @media (prefers-color-scheme: dark) {
         box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+        background-color: $dark-charcoal;
     }
 
     ul {
