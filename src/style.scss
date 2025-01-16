@@ -59,29 +59,38 @@ small {
     padding-bottom: 25px;
 
     .section {
-        height: 100vh;
+        height: 90vh;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         flex-flow: column;
+    }
 
-        &.intro {
-            background: linear-gradient(45deg, $vivid-red, $gold, $dodger-blue);
-            background-clip: text;
-            color: transparent;
+    .intro {
+        background: linear-gradient(45deg, $vivid-red, $gold, $dodger-blue);
+        background-clip: text;
+        color: transparent;
 
-            /* Portrait and Landscape */
-            @media (min-width: 600px)  { // this is the breakpoint that fits the 2 divs nicely
-                flex-flow: row;
-            }
+        /* Portrait and Landscape */
+        @media (min-width: 600px)  { // this is the breakpoint that fits the 2 divs nicely
+            flex-flow: row;
         }
+    }
 
-        &.quote {
-            /* Portrait and Landscape */
-            @media (min-width: 600px)  {
-                padding: 0 250px;
-            }
+    .quote {
+        background: linear-gradient(45deg, $vivid-red, $gold, $dodger-blue);
+        border-radius: 20px;
+        box-shadow: 4px -4px 8px 5px rgba(0, 0, 0, 0.3);
+        height: auto;
+        margin: 50px auto;
+        padding: 20px;
+        overflow-y: auto;
+
+
+        /* Dark mode background color */
+        @media (prefers-color-scheme: dark) {
+            box-shadow: 4px -4px 8px 5px rgba(255, 255, 255, 0.3);
         }
     }
 }

@@ -30,14 +30,14 @@ export const FolderButton = ({ onLinkClick }) => {
 
     return (
         <>
+            <button type="button" aria-label="Choose what to do" id="btn-whatodo" onClick={handleClick}>
+                <img src={btnImage} alt={btnAlt} />
+            </button>
             {btnAlt.includes('opened') && 
                 <FloatingMenu 
                     onLinkClick={onLinkClick}  /** method is defined in parent component App.js */
                     onVisibilityChange={handleVisibilityChange} 
                 />}
-            <button type="button" aria-label="Choose what to do" id="btn-whatodo" onClick={handleClick}>
-                <img src={btnImage} alt={btnAlt} />
-            </button>
         </>
     );
 }

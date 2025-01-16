@@ -2,8 +2,8 @@ export const Quote = ({ apiData }) => {
     if(!apiData) return;
 
     return (
-        <div>
-            <blockquote className="section quote">
+        <div className="section">
+            <blockquote className="quote">
                 <p>{apiData.q}</p>
                 <footer>
                     — <cite>{apiData.a}</cite>
