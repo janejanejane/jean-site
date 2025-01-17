@@ -26,7 +26,6 @@ a {
 
 button {
     position: relative;
-    bottom: 20px;
     left: 20px;
     cursor: pointer;
     background-color: transparent;
@@ -41,7 +40,7 @@ img {
 }
 
 small {
-    font-size: 1rem;
+    font-size: 0.5rem;
     font-weight: normal;
     display: inline-block;
 }
@@ -59,7 +58,7 @@ small {
     padding-bottom: 25px;
 
     .section {
-        height: 90vh;
+        height: 80vh;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -79,19 +78,13 @@ small {
     }
 
     .quote {
-        background: linear-gradient(45deg, $vivid-red, $gold, $dodger-blue);
         border-radius: 20px;
-        box-shadow: 4px -4px 8px 5px rgba(0, 0, 0, 0.3);
         height: auto;
         margin: 50px auto;
         padding: 20px;
         overflow-y: auto;
-
-
-        /* Dark mode background color */
-        @media (prefers-color-scheme: dark) {
-            box-shadow: 4px -4px 8px 5px rgba(255, 255, 255, 0.3);
-        }
+        font-size: 1rem;
+        animation: pulse 20s infinite ease-in-out; /* Infinite pulse animation */
     }
 }
 
@@ -106,15 +99,21 @@ small {
 .waving-hand {
     display: inline-block;
     color: $vivid-red;
-    animation: wave 1.2s infinite ease-in-out;
+    animation: wave 1.2s infinite ease-in-out; /* Infinite wave animation */
     padding-right: 20px;
+}
+
+.options {
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 #menu {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: fixed;
     border-radius: 5px;
-    bottom: 75px;
+    bottom: 60px;
     left: 20px;
     background-color: white;
 
@@ -138,6 +137,7 @@ small {
     }
 }
 
+/* Keyframes to animate the hand in the intro */
 @keyframes wave {
     0% { transform: rotate(0deg); }
     25% { transform: rotate(15deg); }
@@ -145,3 +145,22 @@ small {
     75% { transform: rotate(-15deg); }
     100% { transform: rotate(0deg); }
 }
+
+/* Keyframes to animate the pulsing effect of the quote box */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 100px rgba(135, 206, 250, 0.7), 0 0 150px rgba(135, 206, 250, 0.5), 0 0 200px rgba(135, 206, 250, 0.3);
+    }
+    25% {
+        box-shadow: 0 0 10px rgba(135, 206, 250, 0.7), 0 0 30px rgba(135, 206, 250, 0.5), 0 0 60px rgba(135, 206, 250, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 100px rgba(135, 206, 250, 0.7), 0 0 150px rgba(135, 206, 250, 0.5), 0 0 200px rgba(135, 206, 250, 0.3);
+    }
+    75% {
+        box-shadow: 0 0 10px rgba(135, 206, 250, 0.7), 0 0 30px rgba(135, 206, 250, 0.5), 0 0 60px rgba(135, 206, 250, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 100px rgba(135, 206, 250, 0.7), 0 0 150px rgba(135, 206, 250, 0.5), 0 0 200px rgba(135, 206, 250, 0.3);
+    }
+  }
