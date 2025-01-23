@@ -4,14 +4,12 @@ import localforage from "localforage";
 
 export const useFetch = (url, options = {}) => {
     const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [cachedData, setCachedData] = useState(null);
 
     useEffect(() => {
-        console.log('this is the url:', url, 'options:', options);
         if(!url) return;
-
-        if(data) return;
 
         const fetchData = async () => {
             setLoading(true);
@@ -29,12 +27,16 @@ export const useFetch = (url, options = {}) => {
         };
 
         const setQuote = async (quotes) => {
+            setLoading(true);
+
             if(!quotes) {
                 setError(Error('No data found.'));
             }
 
             const updatedQuotes = [...quotes];
+            
             setData(updatedQuotes.shift()); // get the first quote in the array
+            setCachedData(quotes);
 
             try {
                 await localforage.setItem(options.key, updatedQuotes);
@@ -46,6 +48,8 @@ export const useFetch = (url, options = {}) => {
         };
 
         const getRandomQuote = async () => {
+            setLoading(true);
+
             try {
                 const keys = await localforage.keys(); // checks existing databases
 
@@ -63,7 +67,14 @@ export const useFetch = (url, options = {}) => {
                 }
             } catch(err) {
                 setError(err);
+            } finally {
+                setLoading(false);
             }
+        };
+
+
+        if(data) {
+            setQuote(cachedData);
         };
 
         getRandomQuote();

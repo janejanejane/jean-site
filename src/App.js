@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { MenuProvider } from "./contexts/MenuContext";
 import { ContentSection } from "./components/ContentSection";
 import { FolderButton } from "./components/FolderButton";
 import { Footer } from "./components/Footer";
+import { MenuProvider } from "./contexts/MenuContext";
 
 export function App() {
     const [currentSection, setCurrentSection] = useState('intro');

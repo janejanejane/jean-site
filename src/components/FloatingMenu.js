@@ -1,14 +1,15 @@
-import { forwardRef } from "react";
+import { forwardRef, useState, useEffect } from "react";
 import { useMenuContext } from "../contexts/MenuContext";
 
 const FloatingMenu = forwardRef(({ onLinkClick, onVisibilityChange }, ref) => {
-    const { onMenuChange } = useMenuContext();
+    const { setUrlFetch, setOptionsFetch } = useMenuContext();
 
     const handleClick = (e, section, url, options) => {
         e.preventDefault();
 
-        onVisibilityChange(false);
-        onMenuChange(url, options); // defined in MenuContext.js
+        setUrlFetch(url);
+        setOptionsFetch(options);
+        onVisibilityChange();
         onLinkClick(section); // defined in parent component App.js
     };
 

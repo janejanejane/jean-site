@@ -1,26 +1,26 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import { useFetch } from "../hooks/useFetch";
 
-const MenuContext = createContext();
+// const MenuContext = createContext({
+//     urlFetch: null,
+//     setUrlFetch: () => {},
+//     optionsFetch: null,
+//     setOptionsFetch: () => {},
+//     data: null,
+//     loading: false,
+//     error: null
+// });
+
+const MenuContext = createContext({});
 
 const MenuProvider = ({children}) => {
-    const [selectedMenu, setSelectedMenu] = useState(null);
-    const [selectedMenuOptions, setSelectedMenuOptions] = useState(null);
-
-    const urlFetch = selectedMenu ? selectedMenu : null;
-    const optionsFetch = selectedMenuOptions ? selectedMenuOptions : null;
+    const [urlFetch, setUrlFetch] = useState(null);
+    const [optionsFetch, setOptionsFetch] = useState(null);
 
     const {data, loading, error} = useFetch(urlFetch, optionsFetch);
 
-    const onMenuChange = (menu, options) => {
-        setSelectedMenu(menu);
-        setSelectedMenuOptions(options);
-    };
-
-    console.log('Provider re-rendered with state:', data);
-
     return(
-        <MenuContext.Provider value={{selectedMenu, selectedMenuOptions, onMenuChange, data, loading, error}}>
+        <MenuContext.Provider value={{urlFetch, setUrlFetch, optionsFetch, setOptionsFetch, data, loading, error}}>
             {children}
         </MenuContext.Provider>
     );
