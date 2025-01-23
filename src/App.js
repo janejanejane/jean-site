@@ -1,22 +1,23 @@
-import { ContentSection } from "./ContentSection";
-import { FolderButton } from "./FolderButton";
-import { Footer } from "./Footer";
 import { useState } from "react";
+import { MenuProvider } from "./contexts/MenuContext";
+import { ContentSection } from "./components/ContentSection";
+import { FolderButton } from "./components/FolderButton";
+import { Footer } from "./components/Footer";
 
 export function App() {
     const [currentSection, setCurrentSection] = useState('intro');
-    const [apiData, setApiData] = useState(null);
 
-    const handleLinkClick = (section, apiData) => {
+    const handleLinkClick = (section) => {
         setCurrentSection(section); // keep track of what is shown
-        setApiData(apiData); // set the data to show in section
     };
 
     return (
-        <main className="main">
-            <ContentSection currentSection={currentSection} apiData={apiData} />
-            <FolderButton onLinkClick={handleLinkClick} />
-            <Footer />
-        </main>
+        <MenuProvider>
+            <main className="main">
+                <ContentSection currentSection={currentSection} />
+                <FolderButton onLinkClick={handleLinkClick} />
+                <Footer />
+            </main>
+        </MenuProvider>
     );
 }

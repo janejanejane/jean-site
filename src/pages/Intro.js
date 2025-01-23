@@ -1,4 +1,4 @@
-import handWave from "./images/svg/hand-wave.svg";
+import handWave from "../images/svg/hand-wave.svg";
 
 export function Intro() {
     return (
