@@ -1,4 +1,4 @@
-import { forwardRef, useState, useEffect } from "react";
+import { forwardRef } from "react";
 import { useMenuContext } from "../contexts/MenuContext";
 
 const FloatingMenu = forwardRef(({ onLinkClick, onVisibilityChange }, ref) => {
@@ -16,7 +16,12 @@ const FloatingMenu = forwardRef(({ onLinkClick, onVisibilityChange }, ref) => {
     return (
         <div id="menu" ref={ref}>
             <ul>
-                <li><a href="#quote" onClick={(e) => handleClick(e, 'quote', '/quotes', {key: 'zenQuotes'})}>Want a Zen Quote?</a></li>
+                <li>
+                    <a href="#quote" onClick={(e) => handleClick(e, 'quote', '/quotes', {key: 'zenQuotes'})}>Want a Zen Quote?</a>
+                </li>
+                <li>
+                    <a href="#joke" onClick={(e) => handleClick(e, 'joke', '/jokes', {key: 'jokes'})}>Got room for a joke?</a>
+                </li>
             </ul>
         </div>
     );

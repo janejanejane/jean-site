@@ -1,5 +1,6 @@
 import { Intro } from "../pages/Intro";
 import { Quote } from "../pages/Quote";
+import { Joke } from "../pages/Joke";
 import { useMenuContext } from "../contexts/MenuContext";
 
 export const ContentSection = ({ currentSection }) => {
@@ -25,7 +26,7 @@ export const ContentSection = ({ currentSection }) => {
         <div className="content">
             { (currentSection === 'intro' || !data) && <Intro /> }
             { currentSection === 'quote' && <Quote apiData={data} /> }
-            { currentSection === 'joke' && <div>Joke: </div> }
+            { currentSection === 'joke' && <Joke apiData={data} /> }
         </div>
     );
 };

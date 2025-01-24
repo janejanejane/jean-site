@@ -4,9 +4,9 @@ export const Quote = ({ apiData }) => {
     return (
         <div className="section">
             <blockquote className="quote">
-                <p>{apiData.q}</p>
+                <p>{apiData.value.q}</p>
                 <footer>
-                    — <cite>{apiData.a}</cite>
+                    — <cite>{apiData.value.a}</cite>
                 </footer>
             </blockquote>
             <small>Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a></small>

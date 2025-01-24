@@ -77,15 +77,103 @@ small {
         }
     }
 
-    .quote {
+    .quote, .joke {
         border-radius: 20px;
         height: auto;
         margin: 50px auto;
         padding: 20px;
         overflow-y: auto;
         font-size: 1rem;
-        animation: pulse 20s infinite ease-in-out; /* Infinite pulse animation */
     }
+
+    // .quote {
+    //     animation: pulse 20s infinite ease-in-out; /* Infinite pulse animation */
+    // }
+
+    .joke {
+        font-family: 'Impact', sans-serif;
+        max-width: 500px;
+        margin: 30px auto;
+        padding: 25px;
+        background-color: #FFCD00; /* Bright Yellow */
+        text-align: center;
+        border: 4px dashed #FF3366; /* Bold Pink Dashed Border */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+        .setup {
+            font-size: 1.4em;
+            color: #0047AB; /* Blue */
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .punchline {
+            font-size: 1.8em;
+            color: #FF3366; /* Bold Pink */
+            font-weight: 900;
+            margin-top: 15px;
+            text-decoration: underline;
+        }
+    }
+
+
+
+    /* Main styling for the quote container */
+    .quote {
+        font-family: 'Georgia', serif;  /* Elegant serif font for quotes */
+        background-color: #f9f9f9;      /* Light background for readability */
+        border-left: 5px solid #007bff; /* Blue left border to make the quote stand out */
+        padding: 20px 30px;             /* Padding around the quote */
+        margin: 30px auto;              /* Centering the quote */
+        max-width: 600px;               /* Limit the width */
+        font-size: 1rem;                /* Set the base font size to 1rem */
+        line-height: 1.6;               /* Improved line spacing for readability */
+        color: #333;                    /* Dark text color for better contrast */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        border-radius: 8px;             /* Rounded corners for a softer look */
+    }
+    
+    /* Styling for the quote text */
+    .quote p {
+        margin: 0;
+        font-style: italic;             /* Italics for emphasis */
+        font-size: 1rem;                /* Ensure quote text is also 1rem */
+    }
+    
+    /* Styling for the quote footer (author name) */
+    .quote footer {
+        margin-top: 0.5rem;             /* Add a small gap before attribution */
+        font-size: 0.9rem;              /* Slightly smaller than 1rem for author */
+        text-align: right;              /* Align to the right for attribution */
+        color: #007bff;                 /* Use the same blue color as the left border */
+    }
+    
+    /* Styling for the citation (author name) */
+    .quote footer cite {
+        font-weight: bold;              /* Make the author name stand out */
+        color: #007bff;                 /* Same blue color for uniformity */
+    }
+    
+    /* Styling for the small attribution line (ZenQuotes API) */
+    small {
+        display: block;                 /* Makes it a block element so it starts on a new line */
+        margin-top: 1rem;               /* Add spacing between the quote and attribution */
+        font-size: 0.875rem;            /* Slightly smaller text for attribution */
+        color: #666;                    /* Lighter gray color for attribution */
+        text-align: center;             /* Center align the attribution text */
+    }
+    
+    /* Styling for the link */
+    small a {
+        color: #007bff;                 /* Use blue for the link */
+        text-decoration: none;          /* Remove underline */
+    }
+    
+    small a:hover {
+        text-decoration: underline;     /* Add underline on hover */
+        color: #0056b3;                 /* Darker blue when hovered */
+    }
+  
 }
 
 .hidden {
@@ -123,6 +211,7 @@ small {
 
         li {
             margin: 15px;
+            border-bottom: 1px solid gray;
 
             a {
                 text-decoration: none;

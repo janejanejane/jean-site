@@ -15,10 +15,10 @@ export const useFetch = (url, options = {}) => {
             setLoading(true);
 
             try {
-                const response = await axios(url, options); // get quotes from api
+                const response = await axios(url, options); // get quote/joke from api
 
                 await localforage.setItem(options.key, response.data);
-                setQuote(response.data); // call custom function that sets the data
+                setContentValue(response.data); // call custom function that sets the data shown
             } catch(err) {
                 setError(response.err);
             } finally {
@@ -26,20 +26,25 @@ export const useFetch = (url, options = {}) => {
             }
         };
 
-        const setQuote = async (quotes) => {
+        const setContentValue = async (values) => {
             setLoading(true);
 
-            if(!quotes) {
+            if(!values) {
                 setError(Error('No data found.'));
             }
 
-            const updatedQuotes = [...quotes];
+            const updatedValues = [...values];
             
-            setData(updatedQuotes.shift()); // get the first quote in the array
-            setCachedData(quotes);
+            setData(
+                {
+                    type: options.key, 
+                    value: updatedValues.shift() // get the first value in the array
+                }
+            );
+            setCachedData(values);
 
             try {
-                await localforage.setItem(options.key, updatedQuotes);
+                await localforage.setItem(options.key, updatedValues);
             } catch(err) {
                 setError(err);
             } finally {
@@ -47,23 +52,17 @@ export const useFetch = (url, options = {}) => {
             }
         };
 
-        const getRandomQuote = async () => {
+        const getSingleValue = async () => {
             setLoading(true);
 
             try {
                 const keys = await localforage.keys(); // checks existing databases
-
-                if(keys.length === 0) {
-                    fetchData();
-                }
-
                 const value = await localforage.getItem(options.key); // get the quotes
 
-                if(value && value.length) {
-                    console.log('value from indexeddb:', value);
-                    setQuote(value); // call custom function that sets the data
-                } else {
+                if(value === null) {
                     fetchData();
+                } else {
+                    setContentValue(value); // call custom function that sets the data
                 }
             } catch(err) {
                 setError(err);
@@ -73,11 +72,11 @@ export const useFetch = (url, options = {}) => {
         };
 
 
-        if(data) {
-            setQuote(cachedData);
+        if(data && data.type === options.key) {
+            setContentValue(cachedData);
         };
 
-        getRandomQuote();
+        getSingleValue();
 
     }, [url, options]); // url has to have value; triggers the fetching of data
 
