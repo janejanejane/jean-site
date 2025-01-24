@@ -5,7 +5,7 @@ import openFolder from "../images/svg/open-file-folder.svg";
 
 const FloatingMenu = lazy(() => import('./FloatingMenu'));
 
-export const FolderButton = ({ onLinkClick }) => {
+export const FolderButton = ({ style, onLinkClick }) => {
 
     const [btnImage, setBtnImage] = useState(closeFolder);
     const [btnAlt, setBtnAlt] = useState('closed folder');
@@ -46,7 +46,7 @@ export const FolderButton = ({ onLinkClick }) => {
 
 
     return (
-        <div className="options">
+        <div className="options" style={style}>
             <button 
                 type="button" 
                 aria-label="Choose what to do" 

@@ -59,7 +59,7 @@ export const useFetch = (url, options = {}) => {
 
                 const value = await localforage.getItem(options.key); // get the quotes
 
-                if(value.length) {
+                if(value && value.length) {
                     console.log('value from indexeddb:', value);
                     setQuote(value); // call custom function that sets the data
                 } else {
