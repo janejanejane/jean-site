@@ -1,0 +1,62 @@
+
+@use '../utilities/variables' as *;
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: $dark-charcoal;
+    background-color: white;
+
+    /* Dark mode background color */
+    @media (prefers-color-scheme: dark) {
+        color: white;
+        background-color: $dark-charcoal;
+    }
+}
+
+a {
+    color: $dark-charcoal;
+
+    /* Dark mode background color */
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
+}
+
+button {
+    position: relative;
+    left: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    width: 2.5rem;
+    height: auto;
+}
+
+/* Styling for the small attribution line (ZenQuotes API) */
+small {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: $dove-gray;
+    text-align: center;
+    font-weight: 100;
+
+    a {
+        color: $azure;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            color: $dark-cobalt;
+        }
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}

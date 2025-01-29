@@ -1,0 +1,31 @@
+@use '../utilities/variables' as *;
+
+.joke {
+    font-family: 'Impact', sans-serif;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: $amber; /* Bright Yellow */
+    text-align: center;
+    border: 4px dashed $vivid-pink; /* Bold Pink Dashed Border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+    .setup {
+        font-size: 1.4em;
+        color: $cobalt-blue; /* Blue */
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+    .punchline {
+        font-size: 1.8em;
+        color: $vivid-pink; /* Bold Pink */
+        font-weight: 900;
+        margin-top: 15px;
+        text-decoration: underline;
+    }
+
+    button {
+        left: 0; // override the global button left
+    }
+}

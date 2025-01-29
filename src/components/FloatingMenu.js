@@ -14,7 +14,7 @@ const FloatingMenu = forwardRef(({ onLinkClick, onVisibilityChange }, ref) => {
     };
 
     return (
-        <div id="menu" ref={ref}>
+        <div className="menu" ref={ref}>
             <ul>
                 <li>
                     <a href="#quote" onClick={(e) => handleClick(e, 'quote', '/quotes', {key: 'zenQuotes'})}>Want a Zen Quote?</a>

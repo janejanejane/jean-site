@@ -1,0 +1,33 @@
+@use '../utilities/variables' as *;
+
+.quote {
+    font-family: 'Georgia', serif;
+    background-color: $near-white;
+    border-left: 5px solid $azure;
+    padding: 20px 30px;
+    margin: 30px auto;
+    max-width: 600px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $onyx;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    p {
+        margin: 0;
+        font-style: italic;
+        font-size: 1rem;
+    }
+
+    footer {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        text-align: right;
+        color: $azure;
+
+        cite {
+            font-weight: bold;
+            color: $azure;
+        }
+    }
+}

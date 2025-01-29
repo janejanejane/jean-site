@@ -1,0 +1,31 @@
+@use '../utilities/variables' as *;
+
+/* Keyframes to animate the hand in the intro */
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.content {
+    .section {
+        &.intro {
+            background: linear-gradient(45deg, $vivid-red, $gold, $dodger-blue);
+            background-clip: text;
+            color: transparent;
+
+            /* Portrait and Landscape */
+            @media (min-width: 600px)  { // this is the breakpoint that fits the 2 divs nicely
+                flex-flow: row;
+            }
+
+            .waving-hand {
+                display: inline-block;
+                animation: wave 1.2s infinite ease-in-out; /* Infinite wave animation */
+                padding-right: 20px;
+            }
+        }
+    }
+}
