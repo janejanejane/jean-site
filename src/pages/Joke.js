@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export const Joke = ({ apiData }) => {
-    const [showPunchline, setShowPunchline] = useState(false);
-
     if(!apiData) return;
+    
+    const [showPunchline, setShowPunchline] = useState(false);
 
     const handleClick = () => {
         setShowPunchline(true);

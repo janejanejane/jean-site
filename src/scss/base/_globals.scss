@@ -1,10 +1,14 @@
 
 @use '../utilities/variables' as *;
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Courier New', Courier, monospace;
     color: $dark-charcoal;
-    background-color: white;
+    background-color: $creamy-yellow;
 
     /* Dark mode background color */
     @media (prefers-color-scheme: dark) {

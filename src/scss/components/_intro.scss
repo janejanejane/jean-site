@@ -11,10 +11,13 @@
 
 .content {
     .section {
-        &.intro {
+        .intro {
+            display: flex;
             background: linear-gradient(45deg, $vivid-red, $gold, $dodger-blue);
             background-clip: text;
             color: transparent;
+            flex-flow: column;
+            padding: 0 75px;
 
             /* Portrait and Landscape */
             @media (min-width: 600px)  { // this is the breakpoint that fits the 2 divs nicely

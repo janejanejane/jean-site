@@ -9,4 +9,7 @@
 @use 'components/quote';
 @use 'components/joke';
 @use 'components/menu';
+@use 'components/loading';
 
+// Layout
+@use 'layout/hero-image';

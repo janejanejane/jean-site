@@ -8,8 +8,8 @@ export const ContentSection = ({ currentSection }) => {
 
     if(loading) {
         return (
-            <div className="content">
-                <div className="section">Loading...</div>
+            <div className="loading-screen">
+                <div className="spinner"></div>
             </div>
         );
     }
