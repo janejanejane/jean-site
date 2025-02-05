@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import handWave from "../images/svg/hand-wave.svg";
+import pointDown from "../images/svg/point-down.svg";
 
  // register the hook useGSAP to avoid React version discrepancies 
  gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -31,7 +32,6 @@ export function Intro() {
                         start: 'top 75%',
                         end: 'top 50%',
                         scrub: 0.5,
-                        once: true,
                         // markers: true,
                     }
                 }
@@ -93,7 +93,31 @@ export function Intro() {
             </div>
             <div className="section">
                 <div className="intro">
-                    <p>Choose a joke or quote below.</p>
+                    <p>I've set up an API fetcher here.</p>
+                </div>
+            </div>
+            <div className="section">
+                <div className="intro">
+                    <p>It grab jokes...</p>
+                </div>
+            </div>
+            <div className="section">
+                <div className="intro">
+                    <p>and quotes from open sources.</p>
+                </div>
+            </div>
+            <div className="section">
+                <div className="intro">
+                    <p>Wanna see it in action?</p>
+                </div>
+            </div>
+            <div className="section">
+                <div className="intro">
+                    <p>Click below 
+                        <span className="point-down-hand">
+                            <img src={pointDown} alt="pointing down" />
+                        </span>
+                    </p>
                 </div>
             </div>
         </>
