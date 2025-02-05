@@ -11,57 +11,90 @@ export function Intro() {
     useGSAP(() => {
         const intros = gsap.utils.toArray('.intro');
 
-        intros.forEach((intro) => {
-            gsap.fromTo(
+        gsap.from('.welcome', {
+            scale: 3,
+            opacity: 0.2,
+            duration: 1,
+            ease: 'power4.out'
+        })
+
+        intros.forEach((intro, index) => {
+            gsap.from(
                 intro, // target
                 {
-                    scale: 2, // fromVars
-                    opacity: 0.2,
-                },
-                {
-                    scale: 1, // toVars
-                    opacity: 1,
-                    duration: 2,
+                    opacity: 0.2, // toVars
+                    duration: 3,
+                    ease: 'power4.out',
+                    x: index % 2 === 0 ? '-100vw' : '100vw',
                     scrollTrigger: {
                         trigger: intro,
-                        start: "top 75%",
-                        end: "top 20%",
+                        start: 'top 75%',
+                        end: 'top 50%',
                         scrub: 0.5,
+                        once: true,
                         // markers: true,
                     }
                 }
             )
+        });
+
+
+        const section = gsap.utils.toArray('.section');
+
+        const generateColor = (index) => {
+            const lightness = 82 +index * 3;
+            return `hsl(53, 100%, ${lightness}%)`;
+        };
+        
+        section.forEach((sec, index) => {
+            gsap.to(sec, {
+                backgroundColor: generateColor(index),
+                scrollTrigger: {
+                    trigger: sec, 
+                    start: "top 99%", 
+                    end: "bottom 80%", 
+                    scrub: true, 
+                  },
+            });
         });
     });
 
     return (
         <>
             <div className="section">
-                <div className="hero-image">
-                    <small>
-                        <p>Photo by <a href="https://unsplash.com/@mitchel3uo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mitchell Luo</a> on <a href="https://unsplash.com/photos/black-and-white-striped-textile-FWoq_ldWlNQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
-                    </small>
-                    <div className="scroll-text">
-                        Scroll Down
+                <div className="welcome">
+                    <div>
+                        <p>Welcome Visitor!</p>
+                    </div>
+                    <div className="scroll-prompt">
+                        <p>Scroll Down</p>
                         <div className="arrow-down"></div>
                     </div>
                 </div>
             </div>
             <div className="section">
                 <div className="intro">
-                    <div>Hello!
-                        <div className="waving-hand">
-                            <img src={handWave} alt="hand waving" />
-                        </div>
+                    <div>
+                        <p>Hello!
+                            <span className="waving-hand">
+                                <img src={handWave} alt="hand waving" />
+                            </span>
+                        </p>
                     </div>
-                    <div>I'm Jean.</div>
+                    <div>
+                        <p>I'm Jean.</p>
+                    </div>
                 </div>
             </div>
             <div className="section">
-                <div className="intro">I'm a Software Developer.</div>
+                <div className="intro">
+                    <p>A Software Developer.</p>
+                </div>
             </div>
             <div className="section">
-                <div className="intro">Thank's for dropping by.</div>
+                <div className="intro">
+                    <p>Choose a joke or quote below.</p>
+                </div>
             </div>
         </>
     );

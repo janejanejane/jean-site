@@ -11,7 +11,35 @@
 
 .content {
     .section {
-        .intro {
+
+        .welcome {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            background-color: $creamy-yellow;
+
+            .scroll-prompt {
+                color: $onyx;
+                font-size: 1.2rem;
+                position: absolute;
+                top: 120px;
+                left: 50%;
+                transform: translateX(-50%);
+  
+                .arrow-down {
+                    position: relative;
+                    margin: 0 auto;
+                    width: 0;
+                    height: 0;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-top: 20px solid $onyx;
+                    animation: bounce 1.5s infinite;
+                }
+            }
+        }
+
+        .intro, .welcome {
             display: flex;
             background: linear-gradient(45deg, $vivid-red, $gold, $dodger-blue);
             background-clip: text;
@@ -27,7 +55,7 @@
             .waving-hand {
                 display: inline-block;
                 animation: wave 1.2s infinite ease-in-out; /* Infinite wave animation */
-                padding-right: 20px;
+                padding: 0 15px;
             }
         }
     }
