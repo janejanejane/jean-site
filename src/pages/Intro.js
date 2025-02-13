@@ -12,12 +12,8 @@ import FloatingMenu from "../components/FloatingMenu";
  // register the hook useGSAP to avoid React version discrepancies 
  gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export const Intro = ({ setCurrentSection }) => {
+ export function Intro() {
     const menuRef = useRef(null);
-
-    const onLinkClick = (section) => {
-        setCurrentSection(section); // keep track of what is shown
-    };
 
     useGSAP(() => {
         const intros = gsap.utils.toArray('.intro');
@@ -156,10 +152,7 @@ export const Intro = ({ setCurrentSection }) => {
                     </p>
                 </div>
             </div>
-            <FloatingMenu 
-                onLinkClick={onLinkClick}
-                ref={menuRef}
-            />
+            <FloatingMenu ref={menuRef} />
         </>
     );
 }

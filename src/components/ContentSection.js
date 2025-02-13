@@ -4,8 +4,8 @@ import { Quote } from "../pages/Quote";
 import { Joke } from "../pages/Joke";
 import { useMenuContext } from "../contexts/MenuContext";
 
-export const ContentSection = () => {
-    const { currentSection, setCurrentSection, data, loading, error } = useMenuContext();
+export function  ContentSection() {
+    const { currentSection, data, loading, error } = useMenuContext();
 
     if(loading) {
         return (
@@ -23,7 +23,7 @@ export const ContentSection = () => {
 
     return (
         <div className="content">
-            { (currentSection === 'intro' || !data) && <Intro setCurrentSection={setCurrentSection} /> }
+            { (currentSection === 'intro' || !data) && <Intro /> }
             { currentSection === 'quote' && <Quote apiData={data} /> }
             { currentSection === 'joke' && <Joke apiData={data} /> }
         </div>
