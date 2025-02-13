@@ -16,11 +16,22 @@ const MenuContext = createContext({});
 const MenuProvider = ({children}) => {
     const [urlFetch, setUrlFetch] = useState(null);
     const [optionsFetch, setOptionsFetch] = useState(null);
+    const [currentSection, setCurrentSection] = useState('intro');
 
     const {data, loading, error} = useFetch(urlFetch, optionsFetch);
 
     return(
-        <MenuContext.Provider value={{urlFetch, setUrlFetch, optionsFetch, setOptionsFetch, data, loading, error}}>
+        <MenuContext.Provider value={{
+            urlFetch, 
+            setUrlFetch, 
+            optionsFetch, 
+            setOptionsFetch, 
+            currentSection,
+            setCurrentSection,
+            data, 
+            loading, 
+            error
+        }}>
             {children}
         </MenuContext.Provider>
     );

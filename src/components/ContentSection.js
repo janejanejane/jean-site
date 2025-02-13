@@ -1,16 +1,15 @@
+import { LoadingScreen } from "./LoadingScreen";
 import { Intro } from "../pages/Intro";
 import { Quote } from "../pages/Quote";
 import { Joke } from "../pages/Joke";
 import { useMenuContext } from "../contexts/MenuContext";
 
-export const ContentSection = ({ currentSection }) => {
-    const { data, loading, error } = useMenuContext();
+export const ContentSection = () => {
+    const { currentSection, setCurrentSection, data, loading, error } = useMenuContext();
 
     if(loading) {
         return (
-            <div className="loading-screen">
-                <div className="spinner"></div>
-            </div>
+            <LoadingScreen></LoadingScreen>
         );
     }
 
@@ -24,7 +23,7 @@ export const ContentSection = ({ currentSection }) => {
 
     return (
         <div className="content">
-            { (currentSection === 'intro' || !data) && <Intro /> }
+            { (currentSection === 'intro' || !data) && <Intro setCurrentSection={setCurrentSection} /> }
             { currentSection === 'quote' && <Quote apiData={data} /> }
             { currentSection === 'joke' && <Joke apiData={data} /> }
         </div>

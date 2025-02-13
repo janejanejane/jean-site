@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { useMenuContext } from "../contexts/MenuContext";
 
-const FloatingMenu = forwardRef(({ onLinkClick, onVisibilityChange }, ref) => {
+const FloatingMenu = forwardRef(({ onLinkClick }, ref) => {
     const { setUrlFetch, setOptionsFetch } = useMenuContext();
 
     const handleClick = (e, section, url, options) => {
@@ -9,18 +9,17 @@ const FloatingMenu = forwardRef(({ onLinkClick, onVisibilityChange }, ref) => {
 
         setUrlFetch(url);
         setOptionsFetch(options);
-        onVisibilityChange();
-        onLinkClick(section); // defined in parent component App.js
+        onLinkClick(section);
     };
 
     return (
         <div className="menu" ref={ref}>
             <ul>
                 <li>
-                    <a href="#quote" onClick={(e) => handleClick(e, 'quote', '/quotes', {key: 'zenQuotes'})}>Want a Zen Quote?</a>
+                    <a href="#quote" onClick={(e) => handleClick(e, 'quote', '/quotes', {key: 'zenQuotes'})}>Get Zen Quote.</a>
                 </li>
                 <li>
-                    <a href="#joke" onClick={(e) => handleClick(e, 'joke', '/jokes', {key: 'jokes'})}>Got room for a joke?</a>
+                    <a href="#joke" onClick={(e) => handleClick(e, 'joke', '/jokes', {key: 'jokes'})}>Gimme a joke!</a>
                 </li>
             </ul>
         </div>

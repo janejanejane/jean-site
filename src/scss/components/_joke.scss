@@ -1,5 +1,12 @@
 @use '../utilities/variables' as *;
 
+/* Blink animation */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 .joke {
     font-family: 'Impact', sans-serif;
     max-width: 500px;
@@ -11,14 +18,14 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
     .setup {
-        font-size: 1.1em;
+        font-size: 1.1rem;
         color: $cobalt-blue;
         text-transform: uppercase;
         font-weight: 800;
     }
 
     .punchline {
-        font-size: 1.2em;
+        font-size: 1.2rem;
         color: $vivid-pink;
         font-weight: 900;
         margin-top: 15px;
@@ -27,5 +34,9 @@
 
     button {
         left: 0; // override the global button left
+        font-size: 1.2rem;
+        color: $dodger-blue;
+        cursor: pointer;
+        animation: blink 1.5s infinite alternate;
     }
 }

@@ -1,51 +1,70 @@
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import chroma from "chroma-js";
 
 import handWave from "../images/svg/hand-wave.svg";
 import pointDown from "../images/svg/point-down.svg";
 
+import FloatingMenu from "../components/FloatingMenu";
+
  // register the hook useGSAP to avoid React version discrepancies 
  gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export function Intro() {
+export const Intro = ({ setCurrentSection }) => {
+    const menuRef = useRef(null);
+
+    const onLinkClick = (section) => {
+        setCurrentSection(section); // keep track of what is shown
+    };
+
     useGSAP(() => {
         const intros = gsap.utils.toArray('.intro');
+
+        const section = gsap.utils.toArray('.section');
+
+        const generateColor = (index) => {
+            // Gradually decrease hue from 60° to 53.33° (over all sections)
+            const hue = 60 - (index * (60 - 53.33)) / (section.length - 1);
+            
+            // Gradually increase lightness from 80% to 82.35% (over all sections) / 100 to make value between 0 - 1
+            const lightness = (80 + (index * (82.35 - 80)) / (section.length - 1)) / 100;
+
+            // Fully saturated color
+            const saturation = 1;
+
+            // Hue: A value between 0 and 360 degrees.
+            // Saturation: A value between 0 and 1 (not %).
+            // Lightness: A value between 0 and 1 (not %).
+            const hslValue = chroma.hsl(hue, saturation, lightness);
+
+            return hslValue.hex();
+        };
 
         gsap.from('.welcome', {
             scale: 3,
             opacity: 0.2,
             duration: 1,
             ease: 'power4.out'
-        })
-
-        intros.forEach((intro, index) => {
-            gsap.from(
-                intro, // target
-                {
-                    opacity: 0.2, // toVars
-                    duration: 3,
-                    ease: 'power4.out',
-                    x: index % 2 === 0 ? '-100vw' : '100vw',
-                    scrollTrigger: {
-                        trigger: intro,
-                        start: 'top 75%',
-                        end: 'top 50%',
-                        scrub: 0.5,
-                        // markers: true,
-                    }
-                }
-            )
         });
 
+        intros.forEach((intro, index) => {
+            gsap.from(intro, {
+                opacity: 0.2,
+                duration: 3,
+                ease: 'power4.out',
+                x: index % 2 === 0 ? '-100vw' : '100vw',
+                scrollTrigger: {
+                    trigger: intro,
+                    start: 'top 75%',
+                    end: 'top 50%',
+                    scrub: 0.5,
+                    // markers: true,
+                }
+            });
+        });
 
-        const section = gsap.utils.toArray('.section');
-
-        const generateColor = (index) => {
-            const lightness = 82 +index * 3;
-            return `hsl(53, 100%, ${lightness}%)`;
-        };
-        
         section.forEach((sec, index) => {
             gsap.to(sec, {
                 backgroundColor: generateColor(index),
@@ -54,10 +73,27 @@ export function Intro() {
                     start: "top 99%", 
                     end: "bottom 80%", 
                     scrub: true, 
-                  },
+                }
             });
         });
-    });
+
+        if(menuRef.current) {
+            gsap.fromTo(
+                menuRef.current,
+                {
+                    scale: 2,
+                },
+                {
+                    scale: 1,
+                    ease: 'power4.out', 
+                    scrollTrigger: {
+                        trigger: menuRef.current,
+                        scrub: true
+                    }
+                }
+            );
+        }
+    }, [menuRef.current]);
 
     return (
         <>
@@ -120,6 +156,10 @@ export function Intro() {
                     </p>
                 </div>
             </div>
+            <FloatingMenu 
+                onLinkClick={onLinkClick}
+                ref={menuRef}
+            />
         </>
     );
 }

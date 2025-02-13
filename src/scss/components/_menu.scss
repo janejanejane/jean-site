@@ -1,26 +1,29 @@
 @use '../utilities/variables' as *;
 
 .menu {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: fixed;
-    border-radius: 5px;
-    bottom: 60px;
-    left: 20px;
-    background-color: white;
-
-    /* Dark mode background color */
-    @media (prefers-color-scheme: dark) {
-        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
-        background-color: $dark-charcoal;
-    }
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     ul {
         list-style-type: none;
         padding: 0;
+        display: flex;
+        background-color: $white;
+
+        /* Dark mode background color */
+        @media (prefers-color-scheme: dark) {
+            background-color: $dark-charcoal;
+        }
 
         li {
             padding: 15px;
-            border-bottom: 1px solid gray;
+            border: 1px solid gray;
 
             a {
                 text-decoration: none;
