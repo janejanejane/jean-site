@@ -1,11 +1,12 @@
 .content {
     .section {
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         flex-flow: column;
         text-align: left;
+        position: relative;
     }
 }

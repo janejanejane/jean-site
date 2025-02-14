@@ -86,8 +86,11 @@ import FloatingMenu from "../components/FloatingMenu";
                     ease: 'power4.out', 
                     scrollTrigger: {
                         trigger: menuRef.current,
+                        start: "top 99%", 
+                        end: "bottom 99%", 
                         scrub: true,
                         invalidateOnRefresh: true,
+                        // markers: true
                     }
                 }
             );

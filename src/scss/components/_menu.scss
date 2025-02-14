@@ -6,9 +6,16 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 50px;
+    margin-top: 20px;
+    bottom: 0;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    &.in-page {
+        position: fixed;
+        top: calc(100vh - 25%);
+        left: calc(100vw - 50%);
+    }
 
     ul {
         list-style-type: none;
@@ -16,15 +23,16 @@
         display: flex;
         background-color: $white;
 
-        /* Dark mode background color */
-        @media (prefers-color-scheme: dark) {
-            background-color: $dark-charcoal;
-        }
+        // /* Dark mode background color */
+        // @media (prefers-color-scheme: dark) {
+        //     background-color: $dark-charcoal;
+        // }
 
         li {
             cursor: pointer;
             padding: 15px;
             border: 1px solid gray;
+            white-space: nowrap;
 
             a {
                 text-decoration: none;

@@ -21,7 +21,7 @@ export const Joke = ({ apiData }) => {
                 </article>
                 <small>Jokes provided by <a href="https://github.com/15Dkatz/official_joke_api" target="_blank">Official Joke API!</a></small>
             </div>
-            <FloatingMenu />
+            <FloatingMenu className="in-page" />
             <ItemStats />
         </>
     );

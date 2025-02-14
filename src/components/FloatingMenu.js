@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { useMenuContext } from "../contexts/MenuContext";
 
-const FloatingMenu = forwardRef(({}, ref) => {
+const FloatingMenu = forwardRef(({ className }, ref) => {
     const { setCurrentSection, setUrlFetch, setOptionsFetch } = useMenuContext();
 
     const onLinkClick = (section) => {
@@ -17,7 +17,7 @@ const FloatingMenu = forwardRef(({}, ref) => {
     };
 
     return (
-        <div className="menu" ref={ref}>
+        <div className={`menu ${className || ''}`} ref={ref}>
             <ul>
                 <li onClick={(e) => handleClick(e, 'quote', '/quotes', {key: 'zenQuotes'})}>
                     <a href="#quote">Get Zen Quote.</a>

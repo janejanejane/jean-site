@@ -15,7 +15,7 @@ export const Quote = ({ apiData }) => {
                 </blockquote>
                 <small>Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a></small>
             </div>
-            <FloatingMenu />
+            <FloatingMenu className="in-page" />
             <ItemStats />
         </>
     );

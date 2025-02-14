@@ -14,10 +14,10 @@ body {
     color: $dark-charcoal;
     background-color: $creamy-yellow;
 
-    /* Dark mode background color */
-    @media (prefers-color-scheme: dark) {
-        color: white;
-    }
+    // /* Dark mode background color */
+    // @media (prefers-color-scheme: dark) {
+    //     color: white;
+    // }
 }
 
 a {
