@@ -1,0 +1,24 @@
+@use '../utilities/variables' as *;
+
+.stats {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    background-color: rgba($onyx, 0.1);
+    position: fixed;
+    padding: 10px;
+    top: 10px;
+    left: 10px;
+    color: $dove-gray;
+    text-decoration: underline;
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        display: inline-block;
+        font-size: 0.8rem;
+    }
+}

@@ -7,10 +7,12 @@ export const useFetch = (url, options = {}) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [cachedData, setCachedData] = useState(null);
+    const [stats, setStats] = useState([]);
 
     useEffect(() => {
         if(!url) return;
 
+        // Fetch quote/joke from api source if none is saved in browser
         const fetchData = async () => {
             setLoading(true);
 
@@ -26,6 +28,7 @@ export const useFetch = (url, options = {}) => {
             }
         };
 
+        // Update both the (1) stored value in indexeddb and (2) the data shown to user
         const setContentValue = async (values) => {
             setLoading(true);
 
@@ -35,12 +38,10 @@ export const useFetch = (url, options = {}) => {
 
             const updatedValues = [...values];
             
-            setData(
-                {
-                    type: options.key, 
-                    value: updatedValues.shift() // get the first value in the array
-                }
-            );
+            setData({
+                type: options.key, 
+                value: updatedValues.shift() // get the first value in the array
+            });
             setCachedData(values);
 
             try {
@@ -52,12 +53,12 @@ export const useFetch = (url, options = {}) => {
             }
         };
 
+        // Decide whether to get from indexeddb or from api source
         const getSingleValue = async () => {
             setLoading(true);
 
             try {
-                const keys = await localforage.keys(); // checks existing databases
-                const value = await localforage.getItem(options.key); // get the quotes
+                const value = await localforage.getItem(options.key); // get the quotes/jokes
 
                 if(value === null) {
                     fetchData();
@@ -71,14 +72,54 @@ export const useFetch = (url, options = {}) => {
             }
         };
 
+        // 
+        const getSaved = async () => {
+            setLoading(true);
 
+            try {
+                const keys = await localforage.keys();
+                
+                for (const k of keys) {
+                    const value = await localforage.getItem(k);
+                    let num = 0;
+    
+                    if(value) {
+                        if(Array.isArray(value)) {
+                            num = value.length
+                        } else if (typeof value === 'object') {
+                            num = Object.keys(value).length;
+                        }
+                    }
+    
+                    setStats(prev => {
+                        const found = prev.findIndex(item => item.key === k);
+    
+                        if(found > -1) {
+                            // Update existing
+                            return prev.map((item, idx) => idx === found ? { ...item, total: num} : item);
+                        } else {
+                            // Add new item
+                            return [...prev, {key: k, total: num}];
+                        }
+                    })
+                }
+            } catch(err) {
+                setError(err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+
+        // Check if the user requests the same resource as before e.g. quote -> quote
         if(data && data.type === options.key) {
             setContentValue(cachedData);
         };
 
         getSingleValue();
+        getSaved();
 
     }, [url, options]); // url has to have value; triggers the fetching of data
 
-    return {data, loading, error};
+    return {data, loading, error, stats};
 }

@@ -1,4 +1,5 @@
 import FloatingMenu from "../components/FloatingMenu";
+import ItemStats from "../components/ItemStats";
 
 export const Quote = ({ apiData }) => {
     if(!apiData) return;
@@ -15,6 +16,7 @@ export const Quote = ({ apiData }) => {
                 <small>Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a></small>
             </div>
             <FloatingMenu />
+            <ItemStats />
         </>
     );
 }

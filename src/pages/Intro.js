@@ -24,8 +24,8 @@ import FloatingMenu from "../components/FloatingMenu";
             // Gradually decrease hue from 60° to 53.33° (over all sections)
             const hue = 60 - (index * (60 - 53.33)) / (section.length - 1);
             
-            // Gradually increase lightness from 80% to 82.35% (over all sections) / 100 to make value between 0 - 1
-            const lightness = (80 + (index * (82.35 - 80)) / (section.length - 1)) / 100;
+            // Gradually increase lightness from 80% to 85% (over all sections) / 100 to make value between 0 - 1
+            const lightness = (80 + (index * (85 - 80)) / (section.length - 1)) / 100;
 
             // Fully saturated color
             const saturation = 1;
@@ -56,6 +56,7 @@ import FloatingMenu from "../components/FloatingMenu";
                     start: 'top 75%',
                     end: 'top 50%',
                     scrub: 0.5,
+                    invalidateOnRefresh: true,
                     // markers: true,
                 }
             });
@@ -69,6 +70,7 @@ import FloatingMenu from "../components/FloatingMenu";
                     start: "top 99%", 
                     end: "bottom 80%", 
                     scrub: true, 
+                    invalidateOnRefresh: true,
                 }
             });
         });
@@ -84,7 +86,8 @@ import FloatingMenu from "../components/FloatingMenu";
                     ease: 'power4.out', 
                     scrollTrigger: {
                         trigger: menuRef.current,
-                        scrub: true
+                        scrub: true,
+                        invalidateOnRefresh: true,
                     }
                 }
             );
@@ -130,12 +133,32 @@ import FloatingMenu from "../components/FloatingMenu";
             </div>
             <div className="section">
                 <div className="intro">
-                    <p>It grab jokes...</p>
+                    <p>It grabs zen quotes...</p>
                 </div>
             </div>
             <div className="section">
                 <div className="intro">
-                    <p>and quotes from open sources.</p>
+                    <p>and jokes from open sources.</p>
+                </div>
+            </div>
+            <div className="section">
+                <div className="intro">
+                    <p>After fetching,</p>
+                </div>
+            </div>
+            <div className="section">
+                <div className="intro">
+                    <p>your browser stores 50 zen quotes and 250 jokes,</p>
+                </div>
+            </div>
+            <div className="section">
+                <div className="intro">
+                    <p>depending on the button clicked.</p>
+                </div>
+            </div>
+            <div className="section">
+                <div className="intro">
+                    <p>These remain accessible offline.</p>
                 </div>
             </div>
             <div className="section">

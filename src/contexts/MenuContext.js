@@ -18,7 +18,7 @@ const MenuProvider = ({children}) => {
     const [optionsFetch, setOptionsFetch] = useState(null);
     const [currentSection, setCurrentSection] = useState('intro');
 
-    const {data, loading, error} = useFetch(urlFetch, optionsFetch);
+    const {data, loading, error, stats} = useFetch(urlFetch, optionsFetch);
 
     return(
         <MenuContext.Provider value={{
@@ -30,7 +30,8 @@ const MenuProvider = ({children}) => {
             setCurrentSection,
             data, 
             loading, 
-            error
+            error,
+            stats
         }}>
             {children}
         </MenuContext.Provider>

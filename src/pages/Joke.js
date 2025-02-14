@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FloatingMenu from "../components/FloatingMenu";
+import ItemStats from "../components/ItemStats";
 
 export const Joke = ({ apiData }) => {
     if(!apiData) return;
@@ -21,6 +22,7 @@ export const Joke = ({ apiData }) => {
                 <small>Jokes provided by <a href="https://github.com/15Dkatz/official_joke_api" target="_blank">Official Joke API!</a></small>
             </div>
             <FloatingMenu />
+            <ItemStats />
         </>
     );
 }
