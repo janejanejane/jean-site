@@ -1,0 +1,158 @@
+[
+  {
+    "type": "general",
+    "setup": "Why does Waldo only wear stripes?",
+    "punchline": "Because he doesn't want to be spotted.",
+    "id": 388
+  },
+  {
+    "type": "general",
+    "setup": "Where did you learn to make ice cream?",
+    "punchline": "Sunday school.",
+    "id": 283
+  },
+  {
+    "type": "general",
+    "setup": "What do you call an eagle who can play the piano?",
+    "punchline": "Talonted!",
+    "id": 219
+  },
+  {
+    "type": "general",
+    "setup": "Why do bears have hairy coats?",
+    "punchline": "Fur protection.",
+    "id": 341
+  },
+  {
+    "type": "general",
+    "setup": "Why couldn't the lifeguard save the hippie?",
+    "punchline": "He was too far out, man.",
+    "id": 311
+  },
+  {
+    "type": "general",
+    "setup": "Why did the math book look sad?",
+    "punchline": "Because it had too many problems.",
+    "id": 422
+  },
+  {
+    "type": "dad",
+    "setup": "Why don't eggs tell jokes?",
+    "punchline": "Because they would crack each other up.",
+    "id": 384
+  },
+  {
+    "type": "programming",
+    "setup": "Why did the developer quit his job?",
+    "punchline": "Because he didn't get arrays.",
+    "id": 408
+  },
+  {
+    "type": "programming",
+    "setup": "How many programmers does it take to change a lightbulb?",
+    "punchline": "None that's a hardware problem",
+    "id": 24
+  },
+  {
+    "type": "general",
+    "setup": "Why do pirates not know the alphabet?",
+    "punchline": "They always get stuck at \"C\".",
+    "id": 349
+  },
+  {
+    "type": "general",
+    "setup": "Did you know you should always take an extra pair of pants golfing?",
+    "punchline": "Just in case you get a hole in one.",
+    "id": 104
+  },
+  {
+    "type": "general",
+    "setup": "What biscuit does a short person like?",
+    "punchline": "Shortbread. ",
+    "id": 155
+  },
+  {
+    "type": "general",
+    "setup": "How do you fix a broken pizza?",
+    "punchline": "With tomato paste.",
+    "id": 122
+  },
+  {
+    "type": "general",
+    "setup": "Why did the coffee file a police report?",
+    "punchline": "It got mugged.",
+    "id": 319
+  },
+  {
+    "type": "general",
+    "setup": "Why did the butcher work extra hours at the shop?",
+    "punchline": "To make ends meat.",
+    "id": 62
+  },
+  {
+    "type": "general",
+    "setup": "What do you call a cow with no legs?",
+    "punchline": "Ground beef!",
+    "id": 56
+  },
+  {
+    "type": "general",
+    "setup": "Why does Superman get invited to dinners?",
+    "punchline": "Because he is a Supperhero.",
+    "id": 360
+  },
+  {
+    "type": "general",
+    "setup": "Did you hear that the police have a warrant out on a midget psychic ripping people off?",
+    "punchline": "It reads \"Small medium at large.\"",
+    "id": 97
+  },
+  {
+    "type": "general",
+    "setup": "What do you do when you see a space man?",
+    "punchline": "Park your car, man.",
+    "id": 227
+  },
+  {
+    "type": "general",
+    "setup": "What did the scarf say to the hat?",
+    "punchline": "You go on ahead, I am going to hang around a bit longer.",
+    "id": 183
+  },
+  {
+    "type": "general",
+    "setup": "Why can't your nose be 12 inches long?",
+    "punchline": "Because then it'd be a foot!",
+    "id": 308
+  },
+  {
+    "type": "general",
+    "setup": "Did you hear about the Viking who was reincarnated?",
+    "punchline": "He was Bjorn again",
+    "id": 392
+  },
+  {
+    "type": "general",
+    "setup": "While I was sleeping my friends decided to write math equations on me.",
+    "punchline": "You should have seen the expression on my face when I woke up.",
+    "id": 402
+  },
+  {
+    "type": "general",
+    "setup": "Can a kangaroo jump higher than the Empire State Building?",
+    "punchline": "Of course. The Empire State Building can't jump.",
+    "id": 80
+  },
+  {
+    "type": "general",
+    "setup": "How do you fix a damaged jack-o-lantern?",
+    "punchline": "You use a pumpkin patch.",
+    "id": 123
+  },
+  {
+    "type": "general",
+    "setup": "How much does a hipster weigh?",
+    "punchline": "An instagram.",
+    "id": 144
+  }
+]

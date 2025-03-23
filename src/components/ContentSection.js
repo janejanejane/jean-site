@@ -7,7 +7,7 @@ import { useMenuContext } from "../contexts/MenuContext";
 export function  ContentSection() {
     const { currentSection, data, loading, error } = useMenuContext();
 
-    if(loading) {
+    if(!data && loading) {
         return (
             <LoadingScreen></LoadingScreen>
         );
@@ -24,8 +24,8 @@ export function  ContentSection() {
     return (
         <div className="content">
             { (currentSection === 'intro' || !data) && <Intro /> }
-            { currentSection === 'quote' && <Quote apiData={data} /> }
-            { currentSection === 'joke' && <Joke apiData={data} /> }
+            { currentSection === 'quote' && <Quote /> }
+            { currentSection === 'joke' && <Joke /> }
         </div>
     );
 };

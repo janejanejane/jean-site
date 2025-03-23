@@ -50,6 +50,7 @@ export const useFetch = (url, options = {}) => {
                 setError(err);
             } finally {
                 setLoading(false);
+                getSaved(); // Always call the function that tallies the saved items in indexeddb
             }
         };
 
@@ -72,7 +73,7 @@ export const useFetch = (url, options = {}) => {
             }
         };
 
-        // 
+        // Tally the value of saved items in indexeddb
         const getSaved = async () => {
             setLoading(true);
 
@@ -117,7 +118,6 @@ export const useFetch = (url, options = {}) => {
         };
 
         getSingleValue();
-        getSaved();
 
     }, [url, options]); // url has to have value; triggers the fetching of data
 
