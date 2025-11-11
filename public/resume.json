@@ -1,0 +1,296 @@
+{
+	"basics": {
+		"name": "Jean Claudette Ambait",
+		"label": "Software Developer",
+		"image": "/light-img.png",
+		"url": "https://jeanambait.com",
+		"summary": "Hi!, I'm Jean. I currently reside in New Zealand. I am fortunate to have been granted a Permanent Resident Visa here.",
+		"location": {
+			"city": "Auckland",
+			"countryCode": "NZ",
+			"region": "AUK"
+		},
+		"profiles": [
+			{
+				"network": "GitHub",
+				"username": "janejanejane",
+				"url": "https://github.com/janejanejane"
+			},
+			{
+				"network": "LinkedIn",
+				"username": "jeanambait",
+				"url": "https://www.linkedin.com/in/jeanambait/"
+			}
+		]
+	},
+	"work": [
+		{
+			"name": "Family",
+			"position": "Career break",
+			"startDate": "2022-07",
+			"endDate": "Present"
+		},
+		{
+			"name": "Raken, Inc.",
+			"location": "Auckland, NZ",
+			"description": "A construction management software that streamlines daily reporting, time and crew management, and multimedia documentation to help teams stay organized and efficient.",
+			"position": "Frontend Developer (Part-time)",
+			"url": "https://www.rakenapp.com/",
+			"startDate": "2021-03",
+			"endDate": "2022-07",
+			"summary": "Primary point of contact for the marketing website, overseeing content updates, and overall site functionality.",
+			"projects": [
+				{
+					"name": "Marketing Website",
+					"achievements": [
+						"Streamlined lead-routing for the Marketing team by integrating ChiliPiper into demo forms.",
+						"Revamped user interface with features like sticky panel, eBook previewer, and session-based pop-up content using Vue.js."
+					],
+					"technologies": [
+						"React",
+						"Statamic",
+						"Pardot",
+						"Google Analytics",
+						"Git",
+						"Bitbucket",
+						"JIRA",
+						"Confluence"
+					]
+				}
+			]
+		},
+		{
+			"name": "Raken, Inc.",
+			"location": "Auckland, NZ",
+			"description": "A construction management software that streamlines daily reporting, time and crew management, and multimedia documentation to help teams stay organized and efficient.",
+			"position": "Frontend Developer (Full-time)",
+			"url": "https://www.rakenapp.com/",
+			"startDate": "2018-07",
+			"endDate": "2022-02",
+			"summary": "Team member responsible for supporting improvements to the marketing website and Raken app, with a focus on feature enhancements.",
+			"projects": [
+				{
+					"name": "Raken App",
+					"achievements": [
+						"Developed a paginated gallery view using React, enhancing user engagement in image browsing.",
+						"Optimized Timecards implementation, increasing efficiency and reducing errors."
+					],
+					"technologies": [
+						"React",
+						"REST",
+						"Git",
+						"Bitbucket",
+						"JIRA",
+						"Confluence"
+					]
+				},
+				{
+					"name": "Marketing Website",
+					"achievements": [
+						"Enhanced article pages in Statamic enhancing user engagement through improved layout and navigation.",
+						"Collaborated on Pardot page creation in SalesForce, boosting lead generation."
+					],
+					"technologies": [
+						"Vue",
+						"SalesForce",
+						"Git",
+						"Bitbucket",
+						"JIRA",
+						"Confluence"
+					]
+				}
+			]
+		},
+		{
+			"name": "9 Spokes International Limited",
+			"location": "Auckland, NZ",
+			"description": "A free online application designed to help SMEs aggregate multiple online services into a single dashboard, offering valuable insights into business performance.",
+			"position": "Software Developer",
+			"url": "https://9spokes.com/",
+			"startDate": "2015-12",
+			"endDate": "2018-04",
+			"summary": "Team member responsible for the development of scalable React components, optimizing front-end performance, and enhancing UI functionality across multiple projects.",
+			"achievements": [
+				"Collaborated with the team and Application Architect to plan and create new React components.",
+				"Contributed to RESTful API design activities, enhancing existing services through team discussions and idea exchange.",
+				"Mentored colleagues, providing guidance on solving issues and conducting code reviews.",
+				"Improved user connection journey by upgrading page handling in React, using Hypermedia control responses to replace hard-coded URLs, resulting in a 50% improvement in page response times.",
+				"Redesigned React components to reduce code duplication by centralizing configuration in a common file, streamlining outputs (e.g., styles) for all channel partners.",
+				"Implemented Continuous Integration (CI) for React components, automating the deployment of UI artifacts and removing manual copy-paste tasks.",
+				"Participated in the redesign of Angular 1 graph widgets, creating a generic template system for reusable graphing widgets.",
+				"Investigated and compared alternatives to RaphaelJS, leading to the refactoring of mobile-responsive graphs using d3.js, configurable to display different data types.",
+				"Created new skins/themes for channel partners by modifying SCSS, CSS, and JSP files to meet specific branding requirements."
+			],
+			"technologies": [
+				"Java",
+				"Spring Boot",
+				"Git",
+				"Bitbucket",
+				"JIRA",
+				"Confluence",
+				"Vagrant",
+				"Salt",
+				"jQuery",
+				"Google Analytics"
+			]
+		},
+		{
+			"name": "CommandMedia",
+			"location": "Manila, PH",
+			"description": "A digital agency specializing in delivering custom web applications through tailored themes and plugins, using the popular content management system, WordPress.",
+			"position": "Web Developer (Freelance)",
+			"url": "https://www.commandmedia.net/",
+			"startDate": "2015-04",
+			"endDate": "2015-07",
+			"summary": "Team member responsible for enhancing user interactions and UI functionality across multiple platforms.",
+			"achievements": [
+				"Modified the booking system for Tripzuki, an Indian hotel booking platform, to capture user interactions using jQuery, PHP, and the WordPress API, storing the data in a backend database.",
+				"Enhanced the user directory page of GPSInsight, an internal knowledge base for employees, by improving its styling and functionality with CSS, JavaScript, and jQuery.",
+				"Updated the CSS layout for CashCityPayDay, an online cash advance service, to meet client requirements and provide a more modern, user-friendly look."
+			],
+			"technologies": [
+				"WAMP",
+				"JIRA",
+				"Google Analytics",
+				"TortoiseSVN",
+				"WinSCP"
+			]
+		},
+		{
+			"name": "CSx",
+			"location": "Manila, PH",
+			"description": "A technology company offering a management tool for tracking and assessing concussions in sports.",
+			"position": "Web Developer (Freelance)",
+			"url": "https://csx.co.nz/",
+			"startDate": "2013-01",
+			"endDate": "2014-11",
+			"summary": "Team member responsible for developing web admin application.",
+			"achievements": [
+				"Contributed as part of a 2-person team to develop an online admin application using Angular 1, Node.js, LESS, CSS, Sequelize, and Express.js. Focused on building REST APIs, handling SQL responses, and enhancing UI functionality and styling."
+			],
+			"technologies": [
+				"Git",
+				"Github",
+				"Trello"
+			]
+		},
+		{
+			"name": "dB Wizards, Inc.",
+			"location": "Makati, PH",
+			"description": "A leading Microsoft Gold Certified Partner specializing in advanced technology and learning solutions using Microsoft products.",
+			"url": "https://www.wizardsgroup.com/",
+			"startDate": "2010-04",
+			"endDate": "2012-12",
+			"summary": "Team member responsible for the development and enhancement of SharePoint sites, and for supporting QA efforts on a .NET engagement application.",
+			"achievements": [
+				"Developed and enhanced SharePoint sites for major clients, including the Philippines’ largest telecom company, a multinational consumer goods corporation, a biopharmaceutical company, and a regional power and light company, using JavaScript, CSS, and SQL reports.",
+				"Initially hired as a QA, contributing to test creation for the .NET engagement application of the Philippines’ largest port management company."
+			],
+			"technologies": [
+				"Excel",
+				"SSRS",
+				"SQL Server"
+			]
+		},
+		{
+			"name": "Megamobile, Inc.",
+			"location": "Mandaluyong, PH",
+			"description": "An SMS content provider delivering promotions to all major mobile networks in the Philippines via SMS code 2948.",
+			"url": "https://mymegamobile.com/",
+			"startDate": "2009-07",
+			"endDate": "2010-04",
+			"summary": "Team member responsible for maintaining mobile content services and developing an internal polling site, utilizing various web technologies.",
+			"achievements": [
+				"Maintained mobile content services, including QUEST Broadcasting's Textline and various SMS raffle services, using MySQL queries.",
+				"Developed an internal polling site for a leading newspaper company using PHP, jQuery, CSS, and JavaScript."
+			]
+		}
+	],
+	"education": [
+		{
+			"institution": "University of the Philippines Cebu",
+			"url": "https://www.upcebu.edu.ph/",
+			"area": "Computer Science",
+			"studyType": "Bachelor of Science",
+			"startDate": "2004-06",
+			"endDate": "2008-10"
+		}
+	],
+	"awards": [
+		{
+			"title": "Inclusive Technology Award",
+			"date": "2014-09-10",
+			"awarder": "DOTC Philippine Transit App Challenge",
+			"summary": "A 3-month long contest by the Department of Transportation and Communications (DOTC) to encourage app developers to use the Philippine Transit Information Service (PTIS) database to help the public choose optimal routes for their travels at a particular time.",
+			"url": "https://www.rappler.com/technology/32603-dotc-metro-manila-transit-apps/"
+		}
+	],
+	"skills": [
+		{
+			"name": "Programming Languages",
+			"level": "Intermediate",
+			"keywords": [
+				"JavaScript",
+				"TypeScript",
+				"PHP",
+				"Ruby"
+			]
+		},
+		{
+			"name": "Web Development",
+			"level": "Intermediate",
+			"keywords": [
+				"React",
+				"Node.js",
+				"Express",
+				"RoR",
+				"REST APIs"
+			]
+		},
+		{
+			"name": "Databases",
+			"level": "Intermediate",
+			"keywords": [
+				"PostgreSQL",
+				"MongoDB",
+				"MySQL"
+			]
+		}
+	],
+	"languages": [
+		{
+			"language": "English",
+			"fluency": "Professional working proficiency"
+		},
+		{
+			"language": "Filipino",
+			"fluency": "Native language"
+		}
+	],
+	"interests": [
+		{
+			"name": "Baking",
+			"keywords": [
+				"Bread",
+				"Filipino desserts"
+			]
+		}
+	],
+	"references": [
+		{
+			"name": "Jon Sandberg",
+			"reference": "Jean is an exceptional developer. She is a person you can rely on and is always happy to help. She is a quick learner and great to work with. I thoroughly enjoy working with Jean and look forward to any opportunity to work together again.",
+			"url": "https://www.linkedin.com/in/jon-sandberg"
+		},
+		{
+			"name": "Atilio Ranzuglia",
+			"reference": "Jean is a very dedicated developer, always looking to help the team and move the company forward. She is a great person and awesome team player, you can always count on her. I've found on her a very experienced UI developer with strong technical background knowledge, who always looks at options and is able to decide which way to go. This is clearly her passion and I can only thank her for her commitment and dedication.",
+			"url": "https://www.linkedin.com/in/atilio-ranzuglia"
+		}
+	],
+	"meta": {
+		"canonical": "",
+		"version": "v0.0.1",
+		"lastModified": ""
+	}
+}

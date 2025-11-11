@@ -1,32 +1,49 @@
-import { useEffect, useState } from "react";
-import { ContentSection } from "./components/ContentSection";
-import { Footer } from "./components/Footer";
-import { MenuProvider } from "./contexts/MenuContext";
+import React, { useEffect, useState} from "react";
+
 import { LoadingScreen } from "./components/LoadingScreen";
-import { useMenuContext } from "./contexts/MenuContext";
+import { Profile } from "./components/Profile";
+import { Basics } from "./components/Basics";
+
+const resumeJson = "/resume.json";
 
 export function App() {
-    const { currentSection } = useMenuContext();
+    const [apiData, setApiData] = useState(null);
     const [loading, setLoading] = useState(true);
-    
-    useEffect(() => {
-        setLoading(true);
+    const [error, setError] = useState(null);
 
-        setTimeout(() => {
-            setLoading(false);
-        }, 3000);
-    }, [currentSection]);
+    useEffect(() => {
+        fetch(resumeJson)
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error(`Error status: ${response.status}`);
+                }
+
+                return response.json();
+            })
+            .then(data => {
+                setApiData(data);
+                setLoading(false);
+            })
+            .catch(err => {
+                setError(err);
+                setLoading(true);
+            });
+    }, []);
+
+    if(loading) {
+        return <LoadingScreen></LoadingScreen>
+    }
+
+    if(error) {
+        return <div>Error: {error.message}</div>
+    }
+
+    console.log('returned data:', apiData);
 
     return (
-        <MenuProvider>
-            {/* Loading Screen */}
-            {loading && <LoadingScreen></LoadingScreen>}
-            
-            {/* Main Content */}
-            {!loading && <main className="main">
-                <ContentSection />
-                <Footer />
-            </main>}
-        </MenuProvider>
-    );
+        <div>
+            {apiData && <Profile />}
+            {apiData && <Basics resume={apiData} />}
+        </div>
+    )
 }
