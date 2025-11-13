@@ -4,7 +4,7 @@
 		"label": "Software Developer",
 		"image": "/light-img.png",
 		"url": "https://jeanambait.com",
-		"summary": "A New Zealand Resident Visa holder with more than a decade of industry experience. My long-term goal is to be a proficient front-end architect and be able to design applications that are scalable and customizable without compromising the integrity and security of the back-end services.",
+		"overview": "",
 		"location": {
 			"city": "Auckland",
 			"countryCode": "NZ",

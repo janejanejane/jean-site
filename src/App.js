@@ -3,8 +3,9 @@ import React, { useEffect, useState} from "react";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Profile } from "./components/Profile";
 import { Basics } from "./components/Basics";
+import { Introduction } from "./components/Introduction";
 
-const resumeJson = "/resume.json";
+const resumeJson = "/website-resume.json";
 
 export function App() {
     const [apiData, setApiData] = useState(null);
@@ -38,11 +39,10 @@ export function App() {
         return <div>Error: {error.message}</div>
     }
 
-    console.log('returned data:', apiData);
-
     return (
         <div>
             {apiData && <Profile />}
+            {apiData && <Introduction />}
             {apiData && <Basics resume={apiData} />}
         </div>
     )

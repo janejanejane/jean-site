@@ -1,16 +1,24 @@
+import github from "url:../images/github.png";
+import linkedin from "url:../images/linkedin.png";
+
 export function Basics({ resume }) {
 
     const basics = resume.basics;
-    const location = basics.location;
+    const profiles = basics.profiles;
 
     return (
         <div>
-            {basics.name}
-            {basics.label}
-            {basics.summary}
-            {location.city}
-            {location.countryCode}
-            {location.region}
+            {
+                profiles.map((value, index) => {
+                    const image = (value.network.toLowerCase() === 'github') ? github : linkedin;
+
+                    return (
+                        <a key={index} href={value.url} target="_blank">
+                            <img src={image} alt={value.network}></img>
+                        </a>
+                    )
+                })
+            }
         </div>
     )
 }
