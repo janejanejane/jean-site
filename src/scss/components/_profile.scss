@@ -1,4 +1,30 @@
 .profile-pic {
-    border-radius: 25%;
-    width: 100px;
+
+    img {
+        border-radius: 25%;
+        width: 150px;
+        max-width: 100%;
+        float: left;
+        margin-right: 1rem;
+    }
+}
+
+.profile-overview__intro {
+
+    p {
+        margin-bottom: 1rem;
+    }
+}
+
+.profile-overview__links {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-inline: auto;
+    max-width: fit-content;
+
+    a {
+        display: inline-block;
+    }
 }

@@ -4,6 +4,7 @@ import { LoadingScreen } from "./components/LoadingScreen";
 import { Profile } from "./components/Profile";
 import { Basics } from "./components/Basics";
 import { Introduction } from "./components/Introduction";
+import { Work } from "./components/Work";
 
 const resumeJson = "/website-resume.json";
 
@@ -40,10 +41,15 @@ export function App() {
     }
 
     return (
-        <div>
+        <main className="main">
             {apiData && <Profile />}
-            {apiData && <Introduction />}
-            {apiData && <Basics resume={apiData} />}
-        </div>
+            {apiData && 
+                <div className="profile-overview">
+                    <Introduction />
+                    {/* <Basics resume={apiData} /> */}
+                </div>
+            }
+            {apiData && <Work resume={apiData} />}
+        </main>
     )
 }

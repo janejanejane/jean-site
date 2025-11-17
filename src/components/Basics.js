@@ -7,7 +7,7 @@ export function Basics({ resume }) {
     const profiles = basics.profiles;
 
     return (
-        <div>
+        <div className="profile-overview__links">
             {
                 profiles.map((value, index) => {
                     const image = (value.network.toLowerCase() === 'github') ? github : linkedin;

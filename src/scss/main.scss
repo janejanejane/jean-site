@@ -1,7 +1,11 @@
 // Base styles
 @use 'base/reset';
 @use 'base/globals';
+@use 'base/app';
 
 // Components
+@use 'components/animation';
+@use 'components/basics';
 @use 'components/profile';
 @use 'components/loading';
+@use 'components/work';
