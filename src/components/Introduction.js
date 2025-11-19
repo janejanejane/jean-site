@@ -1,4 +1,6 @@
 import handWave from "url:../images/svg/hand-wave.svg";
+import nzFlag from "url:../images/svg/nz-flag.svg";
+import phFlag from "url:../images/svg/ph-flag.svg";
 
 export function Introduction() {
     return (
@@ -9,11 +11,23 @@ export function Introduction() {
                 </span>
             </p>
             <p></p>
-            <p>I'm Jean, a Filipino with a permanent residence in New Zealand.</p>
-            <p>I’ve worked in software development for around 10 years. My work experience has mainly been on front-end web development. I have also done server-side development using Ruby on Rails, PHP, JavaScript, MySQL, and s3, to name a few.</p>
-            <p>I’m comfortable figuring out legacy applications and adding features to it. Most of my entry tasks have been this way.</p>
-            <p>Currently, I am on a career break to focus on my kids’ wellbeing.</p>
-            <p>Please have a look at my employment history below, before I took this hiatus.</p>
+            <p>I'm Jean, a Filipino, living in New Zealand.
+                <span className="flag">
+                    <img src={phFlag} alt="PH flag" />
+                </span>
+                <span className="flag">
+                    <img src={nzFlag} alt="NZ flag" />
+                </span>
+            </p>
+            <p>I’m an experienced software developer. My professional background is mostly on front-end web development. But I've also done server-side development using Ruby on Rails, PHP, JavaScript, and MySQL, to name a few.</p>
+            <p>I’m comfortable figuring out legacy applications and adding features to it. Most of my initial assignments in companies have been this way.</p>
+            <p>Right now, I'm on a career break to focus on my children.</p>
+            <p>If you want to know more about my employment history, please have a read below.</p>
+            <p>And thank you for your time!
+                <span className="waving-hand">
+                    <img src={handWave} alt="hand waving" />
+                </span>
+            </p>
         </div>
     )
 }

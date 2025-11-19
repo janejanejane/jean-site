@@ -8,25 +8,36 @@ export function Work({ resume }) {
     });
     
     return (
-        <div className="work">
+        <section className="work">
             <h3>Work Experience</h3>
             <ul className="work__list">
             {
                 work.map((value, index) => {
-                    console.log('value:', value, 'index:', index);
                     const start = formatter.format(new Date(value.startDate));
                     const end = value.endDate === 'Present' ? 'present' : formatter.format(new Date(value.endDate));
+                    const achievements = value.achievements;
+
+                    JSON.stringify(achievements);
+
+                    // {achievements.map((v, i) => {
+                    //     return (
+                    //         <ul>
+                    //             <li key={i}>{v}</li>
+                    //         </ul>
+                    //     );
+                    // })}
 
                     return (
                         <li key={index}>
-                            <p><span>{value.position}</span> | <span>{value.name}</span></p>
-                            <p><small>{value.location}</small> <small>{start} &mdash; {end}</small></p>
-                            <i>{value.description}</i>
+                            <p className="work__list-info1"><span>{value.position}</span><span>{start} &mdash; {end}</span></p>
+                            <p className="work__list-info2"><span>{value.name}</span><span>{value.location}</span></p>
+                            <small className="work__list-info3">{value.description}</small>
+                            {value.summary && <small className="work__list-info4">[{value.summary}]</small>}
                         </li>
                     );
                 })
             }
             </ul>
-        </div>
+        </section>
     )
 }

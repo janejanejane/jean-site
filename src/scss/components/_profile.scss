@@ -1,4 +1,4 @@
-.profile-pic {
+.profile-overview__pic {
 
     img {
         border-radius: 25%;
@@ -9,22 +9,25 @@
     }
 }
 
-.profile-overview__intro {
+.profile-overview {
+    
+    &__intro {
 
-    p {
-        margin-bottom: 1rem;
+        p {
+            margin-bottom: 1rem;
+        }
     }
-}
+    
+    &__links {
 
-.profile-overview__links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-inline: auto;
+        max-width: fit-content;
 
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-inline: auto;
-    max-width: fit-content;
-
-    a {
-        display: inline-block;
+        a {
+            display: inline-block;
+        }
     }
 }

@@ -42,12 +42,12 @@ export function App() {
 
     return (
         <main className="main">
-            {apiData && <Profile />}
             {apiData && 
-                <div className="profile-overview">
+                <section className="profile-overview">
+                    <Profile />
                     <Introduction />
                     {/* <Basics resume={apiData} /> */}
-                </div>
+                </section>
             }
             {apiData && <Work resume={apiData} />}
         </main>

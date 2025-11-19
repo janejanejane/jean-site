@@ -44,25 +44,29 @@ img {
     height: auto;
 }
 
-/* Styling for the small attribution line (ZenQuotes API) */
-small {
-    font-family: 'Courier New', Courier, monospace;
-    display: block;
-    margin-top: 1rem;
-    font-size: 0.875rem;
-    color: $dove-gray;
-    text-align: center;
-    font-weight: 100;
+// /* Styling for the small attribution line (ZenQuotes API) */
+// small {
+//     font-family: 'Courier New', Courier, monospace;
+//     display: block;
+//     // margin-top: 1rem;
+//     font-size: 0.875rem;
+//     color: $dove-gray;
+//     text-align: center;
+//     font-weight: 100;
 
-    a {
-        color: $azure;
-        text-decoration: none;
+//     a {
+//         color: $azure;
+//         text-decoration: none;
 
-        &:hover {
-            text-decoration: underline;
-            color: $dark-cobalt;
-        }
-    }
+//         &:hover {
+//             text-decoration: underline;
+//             color: $dark-cobalt;
+//         }
+//     }
+// }
+
+section {
+    padding: 20px 0;
 }
 
 .hidden {

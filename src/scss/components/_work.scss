@@ -1,12 +1,44 @@
 .work {
     font-family: Courier New, Courier, monospace;
     text-align: justify;
-}
 
-.work__list {
+    &__list {
 
-    li {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        list-style: none;
+        padding-inline-start: 0;
+        padding-left: 0;
+        margin: 0;
+
+        li {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__list-info1 {
+        display: flex;
+        justify-content: space-between;
+
+        &>span:first-child {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    }
+
+    &__list-info2 {
+        font-weight: 100;
+        font-style: italic;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__list-info3 {
+        display: block;
+        text-indent: 4rem;
+        padding: 0.5rem 0;
+    }
+
+    &__list-info4 {
+        text-shadow: 1px 1px 2px pink;
     }
 }
