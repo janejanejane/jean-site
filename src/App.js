@@ -49,6 +49,7 @@ export function App() {
                     {/* <Basics resume={apiData} /> */}
                 </section>
             }
+            <hr />
             {apiData && <Work resume={apiData} />}
         </main>
     )

@@ -12,11 +12,13 @@
 		},
 		"profiles": [
 			{
+				"id": "3df5b783-5240-4618-b51b-1442009ae319",
 				"network": "GitHub",
 				"username": "janejanejane",
 				"url": "https://github.com/janejanejane"
 			},
 			{
+				"id": "b532cf4a-0055-4b1b-b6eb-a60090d856cc",
 				"network": "LinkedIn",
 				"username": "jeanambait",
 				"url": "https://www.linkedin.com/in/jeanambait/"
@@ -25,12 +27,14 @@
 	},
 	"work": [
 		{
+			"id": "607e66b6-62cc-4bf5-ab23-d62622932984",
 			"name": "Family",
 			"position": "Career break",
 			"startDate": "2022-07",
 			"endDate": "Present"
 		},
 		{
+			"id": "0644a5b3-37ef-4687-9f25-c3f64175ddfa",
 			"name": "Raken, Inc.",
 			"location": "Auckland, NZ",
 			"description": "A construction management software that streamlines daily reporting, time and crew management, and multimedia documentation to help teams stay organized and efficient.",
@@ -41,6 +45,7 @@
 			"summary": "I was the primary point of contact for the marketing website, overseeing content updates, and overall site functionality.",
 			"projects": [
 				{
+					"id": "62577d1d-d219-408c-8d9b-3e0ef70d87ff",
 					"name": "Marketing Website",
 					"achievements": [
 						"Streamlined lead-routing for the Marketing team by integrating ChiliPiper into demo forms.",
@@ -60,6 +65,7 @@
 			]
 		},
 		{
+			"id": "cb49c738-b901-42d1-8a88-390d47c46cb4",
 			"name": "Raken, Inc.",
 			"location": "Auckland, NZ",
 			"description": "A construction management software that streamlines daily reporting, time and crew management, and multimedia documentation to help teams stay organized and efficient.",
@@ -70,6 +76,7 @@
 			"summary": "I was part of a team and I was responsible for supporting improvements to the marketing website and Raken app, with a focus on feature enhancements.",
 			"projects": [
 				{
+					"id": "fa193aab-5b7a-478d-b149-25bb364eceac",
 					"name": "Raken App",
 					"achievements": [
 						"Developed a paginated gallery view using React, enhancing user engagement in image browsing.",
@@ -85,6 +92,7 @@
 					]
 				},
 				{
+					"id": "6f71541e-a6a0-4ab4-8080-99537f9aa515",
 					"name": "Marketing Website",
 					"achievements": [
 						"Enhanced article pages in Statamic enhancing user engagement through improved layout and navigation.",
@@ -102,6 +110,7 @@
 			]
 		},
 		{
+			"id": "5533c206-e1f4-470e-a326-3424175f06ff",
 			"name": "9 Spokes International Limited",
 			"location": "Auckland, NZ",
 			"description": "A free online application designed to help SMEs aggregate multiple online services into a single dashboard, offering valuable insights into business performance.",
@@ -109,7 +118,7 @@
 			"url": "https://9spokes.com/",
 			"startDate": "2015-12",
 			"endDate": "2018-04",
-			"summary": "I was part of a team and my responsibiliy was the development of scalable React components, optimizing front-end performance, and enhancing UI functionality across multiple projects.",
+			"summary": "I was part of a team and my responsibility was the development of scalable React components, optimizing front-end performance, and enhancing UI functionality across multiple projects.",
 			"achievements": [
 				"Collaborated with the team and Application Architect to plan and create new React components.",
 				"Contributed to RESTful API design activities, enhancing existing services through team discussions and idea exchange.",
@@ -135,6 +144,7 @@
 			]
 		},
 		{
+			"id": "7f174841-1645-43d3-9fd8-1eeaefd085ac",
 			"name": "CommandMedia",
 			"location": "Manila, PH",
 			"description": "A digital agency specializing in delivering custom web applications through tailored themes and plugins, using the popular content management system, WordPress.",
@@ -157,6 +167,7 @@
 			]
 		},
 		{
+			"id": "1cedf08f-5b40-4b11-8507-3ddd2b173c21",
 			"name": "CSx",
 			"location": "Manila, PH",
 			"description": "A technology company offering a management tool for tracking and assessing concussions in sports.",
@@ -175,6 +186,7 @@
 			]
 		},
 		{
+			"id": "3a12620a-026e-41d1-8989-e1c64803a332",
 			"name": "dB Wizards, Inc.",
 			"location": "Makati, PH",
 			"description": "A leading Microsoft Gold Certified Partner specializing in advanced technology and learning solutions using Microsoft products.",
@@ -194,6 +206,7 @@
 			]
 		},
 		{
+			"id": "2e253f61-bff6-435e-8db1-002ff019af32",
 			"name": "Megamobile, Inc.",
 			"location": "Mandaluyong, PH",
 			"description": "An SMS content provider delivering promotions to all major mobile networks in the Philippines via SMS code 2948.",

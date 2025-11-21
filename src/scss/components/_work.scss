@@ -15,7 +15,7 @@
         }
     }
 
-    &__list-info1 {
+    &__list-position {
         display: flex;
         justify-content: space-between;
 
@@ -25,20 +25,24 @@
         }
     }
 
-    &__list-info2 {
+    &__list-company {
         font-weight: 100;
-        font-style: italic;
         display: flex;
         justify-content: space-between;
     }
 
-    &__list-info3 {
-        display: block;
-        text-indent: 4rem;
-        padding: 0.5rem 0;
+    &__list-location {
+        font-style: italic;
     }
 
-    &__list-info4 {
-        text-shadow: 1px 1px 2px pink;
+    &__list-description, &__list-summary {
+        display: block;
+        text-indent: 4rem;
+        padding: 0.75rem 0;
+    }
+
+    &__list-summary {
+        font-style: italic;
+        text-shadow: 1px 1px 2px gray;
     }
 }

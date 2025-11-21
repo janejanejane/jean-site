@@ -1,3 +1,6 @@
+import { Achievements } from "./Achievements";
+import { Projects } from "./Projects";
+
 export function Work({ resume }) {
 
     const work = resume.work;
@@ -12,27 +15,19 @@ export function Work({ resume }) {
             <h3>Work Experience</h3>
             <ul className="work__list">
             {
-                work.map((value, index) => {
+                work.map((value) => {
                     const start = formatter.format(new Date(value.startDate));
                     const end = value.endDate === 'Present' ? 'present' : formatter.format(new Date(value.endDate));
-                    const achievements = value.achievements;
-
-                    JSON.stringify(achievements);
-
-                    // {achievements.map((v, i) => {
-                    //     return (
-                    //         <ul>
-                    //             <li key={i}>{v}</li>
-                    //         </ul>
-                    //     );
-                    // })}
 
                     return (
-                        <li key={index}>
-                            <p className="work__list-info1"><span>{value.position}</span><span>{start} &mdash; {end}</span></p>
-                            <p className="work__list-info2"><span>{value.name}</span><span>{value.location}</span></p>
-                            <small className="work__list-info3">{value.description}</small>
-                            {value.summary && <small className="work__list-info4">[{value.summary}]</small>}
+                        <li key={value.id}>
+                            <p className="work__list-position"><span>{value.position}</span><span>{start} &mdash; {end}</span></p>
+                            <p className="work__list-company"><span>{value.name}</span></p>
+                            {value.location && <p className="work__list-location"><span>{value.location}</span></p>}
+                            {value.description && <p className="work__list-description">{value.description}</p>}
+                            {value.summary && <p><small className="work__list-summary">[{value.summary}]</small></p>}
+                            {value.projects && <Projects projects={value.projects} />}
+                            {value.achievements && <Achievements achievements={value.achievements} />}
                         </li>
                     );
                 })
