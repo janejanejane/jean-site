@@ -9,7 +9,7 @@ export function Projects({ projects }) {
 
     return (
         <>
-            <h5>Projects:</h5>
+            {/* <h5>Projects:</h5> */}
             <ul>
                 {projects.map((value) => {
                     console.log('this is value:', value);
