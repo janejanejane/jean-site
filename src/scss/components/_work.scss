@@ -1,6 +1,6 @@
 .work {
     font-family: Courier New, Courier, monospace;
-    text-align: justify;
+    text-align: left;
 
     &__list {
 
@@ -22,6 +22,7 @@
         &>span:first-child {
             font-weight: bold;
             text-decoration: underline;
+            flex: 1 1 70%;
         }
     }
 
