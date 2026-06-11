@@ -167,6 +167,30 @@
 			]
 		},
 		{
+			"id": "ec5874d9-241b-4305-8dba-9ea6f9697fb6",
+			"name": "Digital Space Explorer",
+			"location": "Makati City, PH",
+			"description": "A SaaS company providing a sales and productivity platform called Squadzip which delivers real-time updates to managers about the situation of customer-facing employees.",
+			"position": "Applications Developer",
+			"url": "https://squadzip.com/",
+			"startDate": "2014-11",
+			"endDate": "2015-04",
+			"summary": "I was a team member responsible for enhancing system functionality.",
+			"achievements": [
+				"Developed a proof-of-concept Trello-like dashboard utilizing a Ruby on Rails RESTful API and Angular 1 front-end.",
+				"Refactored legacy JavaScript into the jQuery module pattern to improve code structure and readability.",
+				"Extended Ruby on Rails functionality by customizing the Devise gem for specialized update handling.",
+				"Built automated reporting tools, delivering client reports, monitoring sheets, and an issue-tracking feature."
+			],
+			"technologies": [
+				"LESS",
+				"Git",
+				"Trello",
+				"GitLab",
+				"PostgreSQL"
+			]
+		},
+		{
 			"id": "1cedf08f-5b40-4b11-8507-3ddd2b173c21",
 			"name": "CSx",
 			"location": "Manila, PH",
